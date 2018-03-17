@@ -1,0 +1,36 @@
+table 1000 elements, 900 blocks, dynamic allocation
+              	User       	System     	Real       
+Init & fill   	0.00000000s	0.00002222s	0.00002222s
+First operation	0.00000000s	0.00000000s	0.00000000s
+Second operation	0.00000000s	0.00000000s	0.00000000s
+
+table 20 elements, 900 blocks, static allocation
+              	User       	System     	Real       
+Init & fill   	0.00000000s	0.00000000s	0.00000000s
+First operation	0.00000000s	0.00000000s	0.00000000s
+Second operation	0.00000000s	0.00000000s	0.00000000s
+
+table 10000 elements, 8900 blocks, static allocation
+              	User       	System     	Real       
+Init & fill   	0.00000337s	0.00010000s	0.00010337s
+First operation	0.00000000s	0.00001236s	0.00001236s
+Second operation	0.00000000s	0.00001180s	0.00001180s
+
+table 10000 elements, 8900 blocks, dynamic allocation
+              	User       	System     	Real       
+Init & fill   	0.00000112s	0.00010225s	0.00010562s
+First operation	0.00000000s	0.00000000s	0.00000000s
+Second operation	0.00000056s	0.00000056s	0.00000000s
+
+table 10000 elements, 8900 blocks, dynamic allocation
+              	User       	System     	Real       
+Init & fill   	0.00000112s	0.00010337s	0.00010562s
+First operation	0.00000000s	0.00002584s	0.00002584s
+Second operation	0.00000000s	0.00000000s	0.00000000s
+
+table 1000 elements, 500 blocks, static allocation
+              	User       	System     	Real       
+Init & fill   	0.00000000s	0.00002000s	0.00002000s
+First operation	0.00000000s	0.00000000s	0.00000000s
+Second operation	0.00000000s	0.00000000s	0.00000000s
+
