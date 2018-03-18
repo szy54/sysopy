@@ -3,7 +3,11 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/stat.h>
+#include <sys/times.h>
+#include <sys/resource.h>
 #include <time.h>
+#include <string.h>
+
 
 void generate (char* fileName, int recordsNum, int recordLength){
     srand(time(NULL));
@@ -15,7 +19,7 @@ void generate (char* fileName, int recordsNum, int recordLength){
             buffer[j]=65+rand()%26;    
         }
         buffer[recordLength-1]='\n';
-        printf("%s\n", buffer);
+        //printf("%s\n", buffer);
         write(f, buffer, recordLength);
         //write(f, "\n", 1);
     }
@@ -55,7 +59,7 @@ void sort(char *fileName, int recordsNum, int recordLength, int sys){
                     break;
                 }
             }
-            printf("%d sorted\n", i);
+            //printf("%d sorted\n", i);
         }
         close(f);
     }
@@ -81,7 +85,7 @@ void sort(char *fileName, int recordsNum, int recordLength, int sys){
                 }
 
             }
-            printf("%d sorted\n", i);
+            //printf("%d sorted\n", i);
         }
         fclose(f);
     }
@@ -96,7 +100,7 @@ void copy (char *srcFile, char *destFile, int recordsNum, int recordLength, int 
         int fIn=open(srcFile, O_RDONLY);
         int fOut=open(destFile, O_WRONLY|O_CREAT|O_TRUNC);
         while((bytes=read(fIn, buffer, recordLength))>0){
-            write(fOut, buffer, bytes);
+           write(fOut, buffer, bytes);
         }
         close(fIn);
         close(fOut);
@@ -112,17 +116,44 @@ void copy (char *srcFile, char *destFile, int recordsNum, int recordLength, int 
     }
 }
 
-void makeActions(int argc, char* argv[]){
+void makeActions(char* argv[]){
+    printf("%s %s %s %s %s %s\n",argv[0], argv[1], argv[2], argv[3], argv[4], argv[5]);
+    if(strcmp(argv[1], "generate")==0){
+
+        generate(argv[2], atoi(argv[3]), atoi(argv[4]));
+    }
+    else if(strcmp(argv[1], "copy")==0){
+
+        copy(argv[2], argv[3], atoi(argv[4]), atoi(argv[5]), atoi(argv[6]));
+    }
+    else if(strcmp(argv[1], "sort")==0){
+
+        sort(argv[2], atoi(argv[3]), atoi(argv[4]), atoi(argv[5]));
+    }
     //generate (argv[1], atoi(argv[2]), atoi(argv[3]));
     //copy(argv[1], argv[2], atoi(argv[3]), atoi(argv[4]), atoi(argv[5]));
-    sort(argv[1], atoi(argv[2]), atoi(argv[3]), atoi(argv[4]));
+    //sort(argv[1], atoi(argv[2]), atoi(argv[3]), atoi(argv[4]));
 }
 
-
+double timevalToSec(struct timeval *tv) {
+  return (double)(tv->tv_sec) + ((double)tv->tv_usec / 1000000.0);
+}
 
 int main(int argc, char* argv[]){
-    makeActions(argc, argv);
-
+    struct rusage ruStart;
+    struct rusage ruEnd;
+    memset(&ruStart, 0, sizeof(struct rusage));
+    memset(&ruEnd, 0, sizeof(struct rusage));
+    getrusage(RUSAGE_SELF, &ruStart);
+    makeActions(argv);
+    getrusage(RUSAGE_SELF, &ruEnd);
+    //printf("%ld",tStop->tms_stime);
+    double userTime = timevalToSec(&ruEnd.ru_utime)-timevalToSec(&ruStart.ru_utime);
+    double sysTime = timevalToSec(&ruEnd.ru_stime)-timevalToSec(&ruStart.ru_stime);
+    int i;
+    for(i=1;i<argc;i++)
+        printf("%s ", argv[i]);
+    printf("\nusr: %f\nsys: %f\n", userTime,sysTime);
     return 0;
 }
 
