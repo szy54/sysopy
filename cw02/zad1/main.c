@@ -41,6 +41,7 @@ void sort(char *fileName, int recordsNum, int recordLength, int sys){
         int f=open(fileName, O_RDWR);
         int i,j;
         for(i=1;i<recordsNum;i++){
+            
             lseek(f, i*recordLength, SEEK_SET);
             read(f, buffer1, recordLength);
             j=i-1;
@@ -59,7 +60,7 @@ void sort(char *fileName, int recordsNum, int recordLength, int sys){
                     break;
                 }
             }
-            //printf("%d sorted\n", i);
+            //if(i%100==0) printf("%d sorted\n", i);
         }
         close(f);
     }
@@ -85,7 +86,7 @@ void sort(char *fileName, int recordsNum, int recordLength, int sys){
                 }
 
             }
-            //printf("%d sorted\n", i);
+            //if(i%100==0) printf("%d sorted\n", i);
         }
         fclose(f);
     }

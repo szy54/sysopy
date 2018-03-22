@@ -1,0 +1,128 @@
+./main copy plik plik2 5000 4
+copy plik plik2 5000 4 0 
+usr: 0.000470
+sys: 0.000000
+./main copy plik plik3 5000 4
+copy plik plik3 5000 4 1 
+usr: 0.004016
+sys: 0.008563
+./main sort plik 5000 4 0
+sort plik 5000 4 0 
+usr: 7.469403
+sys: 27.567575
+./main sort plik3 5000 4 1
+sort plik3 5000 4 1 
+usr: 3.671676
+sys: 22.332261
+./main copy plik plik2 4000 4
+copy plik plik2 4000 4 0 
+usr: 0.000247
+sys: 0.000000
+./main copy plik plik3 4000 4
+copy plik plik3 4000 4 1 
+usr: 0.000000
+sys: 0.008959
+./main sort plik 4000 4 0
+sort plik 4000 4 0 
+usr: 4.475186
+sys: 16.970345
+./main sort plik3 4000 4 1
+sort plik3 4000 4 1 
+usr: 2.287103
+sys: 13.656332
+./main copy plik plik2 3000 512
+copy plik plik2 3000 512 0 
+usr: 0.000000
+sys: 0.002709
+./main copy plik plik3 3000 512
+copy plik plik3 3000 512 1 
+usr: 0.000000
+sys: 0.008113
+./main sort plik 3000 512 0
+sort plik 3000 512 0 
+usr: 2.608155
+sys: 9.437406
+./main sort plik3 3000 512 1
+sort plik3 3000 512 1 
+usr: 1.391333
+sys: 7.334804
+./main copy plik plik2 2000 512
+copy plik plik2 2000 512 0 
+usr: 0.001188
+sys: 0.000000
+./main copy plik plik3 2000 512
+copy plik plik3 2000 512 1 
+usr: 0.000000
+sys: 0.007646
+./main sort plik 2000 512 0
+sort plik 2000 512 0 
+usr: 1.148093
+sys: 4.405631
+./main sort plik3 2000 512 1
+sort plik3 2000 512 1 
+usr: 0.571704
+sys: 3.523862
+./main copy plik plik2 2500 4096
+copy plik plik2 2500 4096 0 
+usr: 0.000000
+sys: 0.014884
+./main copy plik plik3 2500 4096
+copy plik plik3 2500 4096 1 
+usr: 0.002977
+sys: 0.014099
+./main sort plik 2500 4096 0
+sort plik 2500 4096 0 
+usr: 1.140009
+sys: 6.181595
+./main sort plik3 2500 4096 1
+sort plik3 2500 4096 1 
+usr: 0.775677
+sys: 6.363496
+./main copy plik plik2 2000 4096
+copy plik plik2 2000 4096 0 
+usr: 0.000000
+sys: 0.008753
+./main copy plik plik3 2000 4096
+copy plik plik3 2000 4096 1 
+usr: 0.000000
+sys: 0.011321
+./main sort plik 2000 4096 0
+sort plik 2000 4096 0 
+usr: 0.827801
+sys: 4.268646
+./main sort plik3 2000 4096 1
+sort plik3 2000 4096 1 
+usr: 0.610941
+sys: 4.314485
+./main copy plik plik2 2000 8192
+copy plik plik2 2000 8192 0 
+usr: 0.000000
+sys: 0.019169
+./main copy plik plik3 2000 8192
+copy plik plik3 2000 8192 1 
+usr: 0.000000
+sys: 0.014679
+./main sort plik 2000 8192 0
+sort plik 2000 8192 0 
+usr: 0.821037
+sys: 6.181807
+./main sort plik3 2000 8192 1
+sort plik3 2000 8192 1 
+usr: 0.551317
+sys: 5.864999
+./main copy plik plik2 2500 8192
+copy plik plik2 2500 8192 0 
+usr: 0.000000
+sys: 0.021062
+./main copy plik plik3 2500 8192
+copy plik plik3 2500 8192 1 
+usr: 0.003319
+sys: 0.014441
+./main sort plik 2500 8192 0
+sort plik 2500 8192 0 
+usr: 1.199558
+sys: 9.358885
+./main sort plik3 2500 8192 1
+sort plik3 2500 8192 1 
+usr: 0.887590
+sys: 9.074612
