@@ -1,0 +1,6 @@
+ls -l /home/sk/wiet/
+pwd
+pwd
+ps -aux
+cp commands commands_copy
+ls -l /home/sk/wiet/4sem/sysopy/cw03/zad2
