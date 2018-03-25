@@ -58,6 +58,13 @@ int parsecommand(char * cmdstr)
         } 
         else{
             printf("Error: process did not exited with 0!\n"); //maybe I should put some status macro here to get the err msg
+            printf("Process terminated by a signal: %d\n", WIFSIGNALED(exitState));
+            if(WIFSIGNALED(exitState)) printf("Terminated by signal number: %d\n", WTERMSIG(exitState));
+            #ifdef WCOREDUMP
+                if(WIFSIGNALED(exitState)) printf("core dumped: %d\n", WCOREDUMP(exitState));
+            #endif
+            printf("Process stopped: %d\n", WIFSTOPPED(exitState));
+            if(WIFSTOPPED(exitState)) printf("Stopsig: %d\n", WSTOPSIG(exitState));
             free(cmdstrdup);
             return 0;
         }

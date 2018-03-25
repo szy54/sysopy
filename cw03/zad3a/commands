@@ -1,4 +1,4 @@
 ls -l /home/sk
 ps
 cp commands commands_cp
-ps -aux
+/home/sk/wiet/4sem/sysopy/cw03/zad3/eloop
