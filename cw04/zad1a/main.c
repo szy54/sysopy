@@ -9,22 +9,33 @@ Zrealizuj powyższe zadanie, tworząc program potomny, który będzie wywoływa�
 #include <unistd.h>
 #include <signal.h>
 
+int sigstpReceived=0;
+
 void obslugaINT(int signum){
     printf("Odebrano SIGINT\n");
+    exit(0);
+}
 
+void obslugaTSTP(int signum){
+    printf("oczekuje na CTRL+Z - kontynuacja lub CTRL+C - zakonczenie programu\n");
+    if(sigstpReceived==0) sigstpReceived=1;
+    else sigstpReceived=0;
 }
 
 int main(int argc, char* argv[]){
-
+    struct sigaction sigact;
+    sigact.sa_handler=obslugaTSTP;
+    sigaction(SIGTSTP, &sigact, NULL);
     signal(SIGINT, obslugaINT);
 
     while(1){
-        time_t rawtime;
-        struct tm * timeinfo;
-
-        time ( &rawtime );
-        timeinfo = localtime ( &rawtime );
-        printf ( "Current local time and date: %s", asctime (timeinfo) );
+        if(!sigstpReceived){
+            time_t rawtime;
+            struct tm * timeinfo;
+            time ( &rawtime );
+            timeinfo = localtime ( &rawtime );
+            printf ( "Current local time and date: %s", asctime (timeinfo) );
+        }
         sleep(1);
     }
 
