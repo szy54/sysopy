@@ -11,6 +11,7 @@
 #include <limits.h>
 #include <ftw.h>
 
+//All the code belongs to github.com/osdnk on his GPL license
 
 //#define buff_size PATH_MAX;
 

@@ -11,6 +11,7 @@
 #include <limits.h>
 #include <ftw.h>
 
+//since this code is almost the same as cw02/zad2 (changes on lines 81-85) also the owner of the code is github.com/osdnk
 
 const char format[] = "%Y-%m-%d %H:%M:%S";
 char buffer[PATH_MAX];
