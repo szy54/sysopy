@@ -1,0 +1,4 @@
+ps -aux | wc -l
+
+ps -aux | wc -l
+pwd | wc -c | wc -w
