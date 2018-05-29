@@ -1,0 +1,100 @@
+kInput file size:		640 x 480
+Filter size:			3
+Amount of threads:		1
+Real time:				0.085484 sec
+
+Input file size:		640 x 480
+Filter size:			3
+Amount of threads:		2
+Real time:				0.048746 sec     //1,75 faster
+
+Input file size:		640 x 480
+Filter size:			3
+Amount of threads:		4
+Real time:				0.029261 sec	//2,92 faster
+
+Input file size:		640 x 480
+Filter size:			3
+Amount of threads:		8
+Real time:				0.026774 sec	//3,19 faster
+
+Input file size:		640 x 480
+Filter size:			3
+Amount of threads:		16
+Real time:				0.026482 sec	//3,22 faster
+
+Input file size:		256 x 256
+Filter size:			10
+Amount of threads:		1
+Real time:				0.205238 sec	//base
+
+Input file size:		256 x 256
+Filter size:			10
+Amount of threads:		2
+Real time:				0.104420 sec	//1,97 faster
+
+Input file size:		256 x 256
+Filter size:			10
+Amount of threads:		4
+Real time:				0.078890 sec	//2,6 faster
+
+Input file size:		256 x 256
+Filter size:			10
+Amount of threads:		8
+Real time:				0.069357 sec	//2,95 faster
+
+Input file size:		256 x 256
+Filter size:			10
+Amount of threads:		16
+Real time:				0.087430 sec	//2,34 faster
+
+Input file size:		640 x 480
+Filter size:			30
+Amount of threads:		1
+Real time:				8.474527 sec	//base
+
+Input file size:		640 x 480
+Filter size:			30
+Amount of threads:		2
+Real time:				4.317799 sec	//1,96 faster
+
+Input file size:		640 x 480
+Filter size:			30
+Amount of threads:		4
+Real time:				2.363953 sec	//3,58 faster
+
+Input file size:		640 x 480
+Filter size:			30
+Amount of threads:		8
+Real time:				2.620196 sec	//3,75 faster
+
+Input file size:		640 x 480
+Filter size:			30
+Amount of threads:		16
+Real time:				2.380049 sec	//3,23 faster
+
+Input file size:		256 x 256
+Filter size:			65
+Amount of threads:		1
+Real time:				8.420796 sec	//base
+
+Input file size:		256 x 256
+Filter size:			65
+Amount of threads:		2
+Real time:				4.327570 sec	//1,95 faster
+
+Input file size:		256 x 256
+Filter size:			65
+Amount of threads:		4
+Real time:				2.309046 sec	//3,65 faster
+
+Input file size:		256 x 256
+Filter size:			65
+Amount of threads:		8
+Real time:				2.404015 sec	//3,50 faster
+
+Input file size:		256 x 256
+Filter size:			65
+Amount of threads:		16
+Real time:				2.288736 sec	//3,68 faster
+
